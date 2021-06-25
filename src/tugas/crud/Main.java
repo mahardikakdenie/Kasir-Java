@@ -2,6 +2,8 @@ package tugas.crud;
 
 import java.io.IOException;
 import java.util.Scanner;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter; // Import the DateTimeFormatter class
 
 class Main {
     public static void main(String[] args) throws IOException {
@@ -227,6 +229,14 @@ class Main {
                 isLanjut = input.next();
             } while (isLanjut.equalsIgnoreCase("y"));
 
+            clearScreen();
+
+            LocalDateTime myDateObj = LocalDateTime.now();
+            DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("E, MMM dd yyyy");
+
+            String formattedDate = myDateObj.format(myFormatObj);
+            System.out.println("\nWaktu Transaksi: " + formattedDate);
+
             for (int i = 0; i < x; i++) {
                 System.out.println("\n================================");
                 System.out.println("Jenis : " + jenis_menu[i]);
@@ -256,19 +266,21 @@ class Main {
                 System.out.println("\n====================");
                 System.out.println("1.Debit");
                 System.out.println("2.Cash");
-                System.out.println("\n====================");
+                System.out.println("====================");
 
                 System.out.print("Pilih Metode : ");
                 int type2;
                 type2 = input.nextInt();
                 if (type2 == 1) {
+                    clearScreen();
                     isTrue = false;
                     boolean isTrue1 = false;
                     do {
                         System.out.println("\n====================");
                         System.out.println("Debit");
-                        System.out.println("====================\n");
+                        System.out.println("====================");
 
+                        System.out.println("\nWaktu Transaksi: " + formattedDate);
                         System.out.println("Total : " + total);
                         System.out.print("Bayar : ");
                         bayar = input.nextInt();
@@ -286,12 +298,14 @@ class Main {
                     } while (isTrue1 == true);
 
                 } else if (type2 == 2) {
+                    clearScreen();
                     isTrue = false;
                     boolean isTrue2 = false;
                     do {
                         System.out.println("\n====================");
                         System.out.println("Cash");
                         System.out.println("====================\n");
+                        System.out.println("\nWaktu Transaksi: " + formattedDate);
                         System.out.println("Total : " + total);
                         System.out.print("Bayar : ");
                         bayar = input.nextInt();
