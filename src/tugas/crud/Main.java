@@ -52,11 +52,12 @@ class Main {
                         do {
                             System.out.println("1.PopCorn");
                             System.out.println("2.Bola Ubi");
-                            System.out.print("Pilih [ 1 - 2 ]");
+                            System.out.print("Pilih [ 1 - 2 ] : ");
                             type = input.nextInt();
                             if (type == 1) {
                                 isSalah = false;
                                 System.out.println(" Nama Makanan : PopCorn");
+                                System.out.println("Harga : 5000");
                                 jenis_menu[x] = "Makanan";
                                 nama_product[x] = "PopCorn";
                                 harga[x] = 5000;
@@ -77,7 +78,8 @@ class Main {
                                 }
                             } else if (type == 2) {
                                 isSalah = false;
-                                System.out.println("Nama Makanan : Bola Ubi");
+                                System.out.println("Nama Makakanan : Bola Ubi");
+                                System.out.println("Harga : 2000");
                                 jenis_menu[x] = "Makanan";
                                 nama_product[x] = "Bola Ubi";
                                 harga[x] = 2000;
@@ -115,9 +117,10 @@ class Main {
                         do {
                             System.out.println("1.Boba");
                             System.out.println("2.Thai Tea");
-                            System.out.print("Pilih [ 1 - 2 ]");
+                            System.out.print("Pilih [ 1 - 2 ] : ");
                             type = input.nextInt();
                             if (type == 1) {
+                                System.out.println("Nama Minuman : Boba");
                                 isSalah2 = false;
                                 jenis_menu[x] = "Minuman";
                                 nama_product[x] = "Boba";
@@ -129,19 +132,22 @@ class Main {
                                     System.out.println("2.Medium");
                                     System.out.println("3.Small");
                                     System.out.println("==========");
-                                    System.out.print("Pilih [ 1 / 2 / 3 ]");
+                                    System.out.print("Pilih [ 1 / 2 / 3 ] :");
                                     type = input.nextInt();
                                     if (type == 1) {
                                         isSize = false;
                                         ukuran[x] = "Large";
                                         harga[x] = 20000;
+                                        System.out.println("Harga : 20000");
                                     } else if (type == 2) {
                                         isSize = false;
                                         ukuran[x] = "Medium";
+                                        System.out.println("Harga : 15000");
                                         harga[x] = 15000;
                                     } else if (type == 3) {
                                         isSize = false;
                                         ukuran[x] = "Small";
+                                        System.out.println("Harga : 10000");
                                         harga[x] = 10000;
                                     } else {
                                         isSize = true;
@@ -164,6 +170,7 @@ class Main {
                                     tot_sementara[x] = sub_total[x] - total_diskon[x];
                                 }
                             } else if (type == 2) {
+                                System.out.println("Nama Minuman : Thai Tea");
                                 jenis_menu[x] = "Minuman";
                                 nama_product[x] = "Thai Tea";
                                 boolean isSize = false;
@@ -174,19 +181,22 @@ class Main {
                                     System.out.println("2.Medium");
                                     System.out.println("3.Small");
                                     System.out.println("==========");
-                                    System.out.print("Pilih [ 1 / 2 / 3 ]");
+                                    System.out.print("Pilih [ 1 / 2 / 3 ] : ");
                                     type = input.nextInt();
                                     if (type == 1) {
                                         isSize = false;
                                         ukuran[x] = "Large";
+                                        System.out.println("Harga : 15000");
                                         harga[x] = 15000;
                                     } else if (type == 2) {
                                         isSize = false;
                                         ukuran[x] = "Medium";
+                                        System.out.println("Harga : 10000");
                                         harga[x] = 10000;
                                     } else if (type == 3) {
                                         isSize = false;
                                         ukuran[x] = "Small";
+                                        System.out.println("Harga : 5000");
                                         harga[x] = 5000;
                                     } else {
                                         isSize = true;
@@ -250,7 +260,7 @@ class Main {
                 System.out.println("Jumlah Harga : " + sub_total[i]);
                 System.out.println("Diskon : " + total_diskon[i]);
                 System.out.println("Total Sementara : " + tot_sementara[i]);
-                System.out.println("================================\n");
+                System.out.println("================================");
 
                 diskon += total_diskon[i];
                 total += tot_sementara[i];
@@ -276,11 +286,11 @@ class Main {
                     isTrue = false;
                     boolean isTrue1 = false;
                     do {
-                        System.out.println("\n====================");
+                        System.out.println("====================");
                         System.out.println("Debit");
                         System.out.println("====================");
 
-                        System.out.println("\nWaktu Transaksi: " + formattedDate);
+                        System.out.println("Waktu Transaksi: " + formattedDate);
                         System.out.println("Total : " + total);
                         System.out.print("Bayar : ");
                         bayar = input.nextInt();
