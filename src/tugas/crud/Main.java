@@ -29,10 +29,6 @@ class Main {
             String isLanjut;
             String ukuran[] = new String[100];
 
-            // Float
-
-            //
-
             do {
                 clearScreen();
                 System.out.println("============================");
@@ -86,7 +82,7 @@ class Main {
                                 System.out.print("Pesan Berapa : ");
                                 jumlah[x] = input.nextInt();
                                 if (jumlah[x] >= 2) {
-                                    bonus[x] = "Boba";
+                                    bonus[x] = "Thai Tea";
                                     sub_total[x] = jumlah[x] * harga[x];
                                     diskon_jumlah[x] = 0.3;
                                     total_diskon[x] = sub_total[x] * diskon_jumlah[x];
@@ -195,6 +191,21 @@ class Main {
                                         clearScreen();
                                     }
                                 } while (isSize);
+                                System.out.print("Pesan Berapa : ");
+                                jumlah[x] = input.nextInt();
+                                if (jumlah[x] >= 3) {
+                                    bonus[x] = "Bola Ubi";
+                                    sub_total[x] = jumlah[x] * harga[x];
+                                    diskon_jumlah[x] = 0.5;
+                                    total_diskon[x] = sub_total[x] * diskon_jumlah[x];
+                                    tot_sementara[x] = sub_total[x] - total_diskon[x];
+                                } else {
+                                    bonus[x] = "Tidak Ada";
+                                    sub_total[x] = jumlah[x] * harga[x];
+                                    diskon_jumlah[x] = 0;
+                                    total_diskon[x] = sub_total[x] * diskon_jumlah[x];
+                                    tot_sementara[x] = sub_total[x] - total_diskon[x];
+                                }
                             } else {
                                 isSalah2 = true;
                                 clearScreen();
@@ -285,6 +296,7 @@ class Main {
                         System.out.print("Bayar : ");
                         bayar = input.nextInt();
                         if (bayar >= total) {
+                            isTrue2 = false;
                             if (bayar - total == 0) {
                                 System.out.println("Sukses ,Selamat Datang Kembali");
                                 break;
